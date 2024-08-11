@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Status</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        body{
+            background: #ebe3d4;
+
+        }
+        .a_class{
+            margin-left:10%;
+        }
+        .button_class{
+            width: 80%;
+            border-radius:30px;
+            border-color: #6992ac;
+            border-width: 2px;
+            color:#443d34; /**/
+            font-size:18px;
+            outline: solid;
+            outline-color:#b8d3e4;
+            outline-width: 4px;
+            margin-top: 60px;
+            font-family: ;
+            font-weight:700;
+            height:51px;
+            padding-top: 10px;
+        }
+        .orders{
+            margin-top:100px;
+        }
+    </style>
+</head>
+<body>
+   <a href="{{url_for('menu_choice')}}" class="a_class btn button_class">Вернуться в главное меню</a>
+    <div align="center" >
+        <div class="orders">
+            <h3>Ваши заказы</h3>
+        </div>
+
+    {% if list_1 %}
+        {% for i in range(m) %}
+            {% if list_2[i] %}
+        <div class="p-4 border-top">
+            <p>Заказ № {{ list_2[i] }} - {{ status[list_2[i]-1] }}</p>
+        </div>
+                {% if status[list_2[i]-1] == 'Некоторые позиции заказа не могут быть осуществлены' %}
+                    <div>
+                        <form action="" method="post">
+                        <input type="hidden" name="order_id_to_save" value="{{ result[i]['order_id'] }}">
+                        <input type="submit" name="action" value="Сделать заказ" class="btn btn-secondary" style="width: 200px">
+                        </form>
+
+                        <form action="" method="post" style="margin-top:1%">
+                            <input type="hidden" name="order_id_to_delete" value="{{ result[i]['order_id'] }}">
+                            <input type="submit" name="action" value="Отменить заказ" class="btn btn-secondary" style="width: 200px">
+                        </form>
+                    </div>
+                    <br>
+
+                {% endif %}
+                {% if status[list_2[i]-1] == 'Заказ не может быть осуществлен' %}
+                    <div>
+                        <form action="" method="post">
+                        <input type="hidden" name="order_id_to_delete" value="{{ result[i]['order_id'] }}">
+                        <input type="submit" name="action" value="Ок" class="btn btn-secondary" style="width: 200px">
+                        </form>
+
+                    </div>
+                    <br>
+                {% endif %}
+                {% if status[list_2[i]-1] == 'Заказ принят' %}
+                    <div>
+                        <form action="" method="post">
+                        <input type="hidden" name="order_id_is_done" value="{{ result[i]['order_id'] }}">
+                        <input type="submit" name="action" value="Подтвердить получение" class="btn btn-secondary" style="width: 200px">
+                        </form>
+                    </div>
+                    <br>
+                {% endif %}
+            {% endif %}
+
+            {% if result[i]['order_list_status'] == 'type3' %}
+                    <p style="color:gray;">
+            {% else %}
+                    <p style="color:black;">
+            {% endif %}
+                    <span > {{ result[i]['dish_name'] }} </span>
+
+                    <span > {{ result[i]['dish_amount'] }} </span>
+                        <span > шт. </span>
+
+                    <span > {{ result[i]['dish_price'] }} </span>
+                        <span > Р </span>
+                    </p>
+
+            {% if list_1[i] %}
+                <p>Итого {{ result[i]['order_bill'] }} P</p>
+            {% endif %}
+
+
+
+        {% endfor %}
+
+    {% else %}
+        <h1>У вас нет актуальных заказов</h1>
+    {% endif %}
+
+</div>
+</body>
+</html>

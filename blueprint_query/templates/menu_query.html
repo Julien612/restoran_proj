@@ -1,0 +1,20 @@
+{% extends 'base_query.html' %}
+{% block menu %}
+
+<div align="center">
+    <div class="b_class" style="font-weight:800; ; font-size:30px">Работа с запросами</div>
+
+    <div class="border-top border-bottom a_class" >
+        <a href="{{ url_for('bp_query.task1') }}" >Найти сумму выручки за год</a> <br><br>
+    </div>
+    <div class="border-bottom a_class">
+        <a href="{{ url_for('bp_query.task3') }}">Найти информацию о самом популярном заказе за месяц </a> <br><br>
+    </div>
+    <div class="a_class">
+        <a href="{{ url_for('menu_choice') }}"> Нажмите для возврата в меню </a>
+    </div>
+
+</div>
+
+{% endblock %}
+

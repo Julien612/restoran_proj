@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактирование меню</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        body{
+            background: #ebe3d4;
+        }
+        a {
+            text-decoration: none;
+            color: #463E3F;
+        }
+
+        .mybutton{
+            border-radius:20px;
+        }
+        .border_bottom{
+            border-top:solid;
+            border-color:#463E3F;
+            border-width:1px;
+
+        }
+        .a_class{
+            margin-left:10%;
+        }
+        .button_class{
+            width: 80%;
+            border-radius:30px;
+            border-color: #6992ac;
+            border-width: 2px;
+            color:#443d34; /**/
+            font-size:18px;
+            outline: solid;
+            outline-color:#b8d3e4;
+            outline-width: 4px;
+            margin-top: 60px;
+            font-family: ;
+            font-weight:700;
+            height:51px;
+            padding-top: 10px;
+        }
+        .m_t_50{
+            margin-top:50px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+{% import 'utils_menu.html' as utils %}
+<a href="{{url_for('menu_choice')}}" class="a_class btn button_class">Вернуться в главное меню</a>
+<div class="container m_t_50" align="center" >
+
+    <div class="row">
+    <div class="col-md-5">
+        <div style="height: 67px">
+            <h4>Текущее меню</h4>
+        </div>
+
+        {% if items %}
+        {% for item in items %}
+            {{ utils.render_item(item, show_form = True) }}
+        {% endfor %}
+        {% else %}
+            <p> Нет доступных товаров</p>
+        {% endif %}
+    </div>
+        <div class="col-md-2"></div>
+    <div class="col-md-5"  >
+        <h4>Позиции меню, которые не могут быть реализованы в данный момент</h4>
+
+        {% if list %}
+        {% for key in list %}
+            {{ utils.render_item(list[key], key, show_form = False) }}
+        {% endfor %}
+        {% else %}
+            <p> </p>
+        {% endif %}
+    </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

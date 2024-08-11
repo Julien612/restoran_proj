@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказ создан</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        body{
+            background: url('https://sun9-15.userapi.com/impg/ZlSY-0QF65-ZrKl3UkdUb5j4qzUdN1jwUiLSgg/NF1AMprYJ1M.jpg?size=1515x722&quality=95&sign=ac2e5bad0ce9fa3151bc873313588f98&type=album');
+            background-size: cover;
+            font-family:;
+            color:#463E3F;
+        }
+        .upper_line{
+            margin-top: 3%;
+            width:75%;
+            background: #463E3F; /*463E3F; 65615b*/
+            height: 2px;
+            margin-left:13%;
+        }
+        a {
+            text-decoration: none;
+            color: #463E3F;
+            font-size:20px;
+        }
+
+    </style>
+</head>
+<div class="upper_line">
+</div>
+
+<div style="margin-top:200px" align="center">
+    <h2 >Заказ {{ order_id }} успешно создан</h2><br><br>
+    <a href="{{url_for('menu_choice')}}">Вернуться в главное меню</a>
+</div>
+</body>
+</html>

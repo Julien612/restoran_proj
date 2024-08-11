@@ -1,0 +1,23 @@
+{% extends 'base_report.html' %}
+{% block report %}
+    {% if rep1 %}
+        <h2 aling="center"> Информация о продажах за {{ month }}.{{ year }} </h2> <br><br>
+    {% else %}
+        <h2 aling="center"> Информация об использованных продуктах за {{ month }}.{{ year }} </h2> <br><br>
+    {% endif %}
+    <table border= 1 width=80% >
+        <tr>
+            {% for column in schema %}
+                <td class=border align="center">{{column}}</td>
+            {% endfor %}
+        </tr>
+        {% for line in result %}
+        <tr>
+            {% for column in line %}
+            <td align="center" > {{column}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table> <br><br>
+    <a text_aling ="center" href="{{ url_for('bp_report.menu_report') }}"> Нажмите для возврата в меню </a><br><br>
+{% endblock %}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+
+    <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='design_list.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        body{
+            background: url('https://sun9-15.userapi.com/impg/ZlSY-0QF65-ZrKl3UkdUb5j4qzUdN1jwUiLSgg/NF1AMprYJ1M.jpg?size=1515x722&quality=95&sign=ac2e5bad0ce9fa3151bc873313588f98&type=album');
+            background-size: cover;
+            font-family:;
+            color:#463E3F;
+        }
+
+        .button_class{
+            width: 92%;
+            border-radius:30px;
+            border-color: #6992ac;
+            border-width: 2px;
+            color:#443d34; /**/
+            font-size:18px;
+            outline: solid;
+            outline-color:#b8d3e4;
+            outline-width: 4px;
+            margin-top: 60px;
+            font-family: ;
+            font-weight:700;
+            height:51px;
+            padding-top: 10px;
+        }
+
+        @font-face {
+           font-family: 'Calliga';
+           src: url('C:\Users\Julia\Appdata\Local\Microsoft\Windows\Fonts\Calliga-Regular.otf');
+        }
+
+        .upper_line{
+            margin-top: 3%;
+            width:75%;
+            background: #463E3F; /*463E3F; 65615b*/
+            height: 2px;
+            margin-left:13%;
+        }
+        .list{
+            width:40%;
+            margin-left:30%;
+            margin-top:50px;
+            text-align:center;
+        }
+        .auth_input{
+            background:#ebe3d4;
+            border-width:3px;
+            border-radius:15px;
+            border-color:#4f4a3e;
+            height:55px;
+        }
+        .m_t_8{
+            margin-top:8%;
+        }
+        .w_43{
+            width: 43%;
+        }
+        .m_t_13{
+            margin-top:13%
+        }
+    </style>
+</head>
+<body>
+<div class="upper_line">
+</div>
+
+<div class="m_t_8" align="center">
+    <h2 style="">Авторизация пользователя</h2> <br>
+    <div class="p-4 m-0 border-0 bd-example w_43">
+        <form method="post" action="">
+                <div class="form-floating mb-3" >
+                  <input type="text" class="form-control auth_input" id="login" name="login" placeholder="Login">
+                  <label for="login">Login</label>
+                </div>
+
+                <div class="form-floating" style="margin-top:5%">
+                  <input type="password" class="form-control auth_input" name="password" id="password" placeholder="Password">
+                  <label for="password">Password</label>
+                </div>
+                <div align="center" class="m_t_13">
+                    <input type="submit" class="btn btn-dark btn-lg" value="Отправить">
+                </div>
+            </form>
+        <br><br>
+        <h2 align="center">{{ message }}</h2>
+    </div>
+</div>
+
+</body>
+</html>

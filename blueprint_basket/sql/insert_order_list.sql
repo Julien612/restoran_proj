@@ -1,0 +1,1 @@
+insert restoran.order_list(order_id, dish_id, dish_amount, order_list_status) values('$order_id', '$dish_id', '$dish_amount', 'type0')

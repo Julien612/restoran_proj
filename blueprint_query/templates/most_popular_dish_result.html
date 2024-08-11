@@ -1,0 +1,22 @@
+{% extends 'base_query.html' %}
+{% block query %}
+
+    <h2 aling="center"> Информация о самом популярном заказе за {{ month }}.{{ year }} </h2>
+
+    <br><br>
+    <table border= 1 width=80% >
+        <tr>
+            {% for column in schema %}
+                <td class=border align="center">{{column}}</td>
+            {% endfor %}
+        </tr>
+        {% for line in result %}
+        <tr>
+            {% for column in line %}
+            <td align="center" > {{column}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table> <br><br>
+    <a text_aling ="center" href="{{ url_for('bp_query.menu_query') }}"> Нажмите для возврата в меню </a><br><br>
+{% endblock %}

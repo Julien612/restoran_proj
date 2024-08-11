@@ -1,0 +1,1 @@
+insert restoran.user_order(user_id, order_date, order_bill, order_status) values('$user_id', '$order_date','$bill', 'sent for ver')

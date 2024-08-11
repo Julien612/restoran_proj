@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block internal_user %}
+
+<div class="upper_line">
+</div>
+
+<div class="list">
+    <a href="{{ url_for('bp_order.order_index') }}" class=" btn button_class">Сделать заказ</a>
+    <a href="{{ url_for('bp_order_st.index') }}" class="btn button_class">Статус актуальных заказов</a>
+    <a href="{{ url_for('bp_order_history.index') }}" class="btn  button_class">Посмотреть историю заказов</a>
+    <a href="/exit" class="btn  button_class"> Нажмите для выхода из системы</a>
+</div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,50 @@
+body{
+            background: url('https://sun9-15.userapi.com/impg/ZlSY-0QF65-ZrKl3UkdUb5j4qzUdN1jwUiLSgg/NF1AMprYJ1M.jpg?size=1515x722&quality=95&sign=ac2e5bad0ce9fa3151bc873313588f98&type=album');
+            background-size: cover;
+            font-family:;
+            color:#463E3F;
+        }
+
+        .button_class{
+            width: 92%;
+            border-radius:30px;
+            border-color: #6992ac;
+            border-width: 1px;
+            color:#443d34; /**/
+            font-size:18px;
+            outline: solid;
+            outline-color:#b8d3e4;
+            outline-width: 3px;
+            margin-top: 50px;
+            font-family: ;
+            font-weight:700;
+            height:53px;
+            padding-top: 12px;
+        }
+
+        @font-face {
+           font-family: 'Calliga';
+           src: url('C:\Users\Julia\Appdata\Local\Microsoft\Windows\Fonts\Calliga-Regular.otf');
+        }
+
+        .upper_line{
+            margin-top: 3%;
+            width:78%;
+            background: #463E3F; /*463E3F; 65615b*/
+            height: 2px;
+            margin-left:10%;
+        }
+        .list{
+            width:40%;
+            margin-left:30%;
+            margin-top:50px;
+            text-align:center;
+        }
+        .m_t_50{
+            margin-top:50px;
+        }
+        a {
+            text-decoration: none;
+            color: #463E3F;
+            font-size:20px;
+        }

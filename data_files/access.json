@@ -1,0 +1,31 @@
+{
+  "director": [
+    "auth.start_auth",
+    "bp_query.task1",
+    "bp_query.task2",
+    "bp_report.menu_report",
+    "bp_report.view_report_1",
+    "bp_report.view_report_2",
+    "bp_query.menu_query",
+    "bp_query.task1",
+    "bp_query.task3"
+  ],
+
+  "storage_manager": [
+    "auth.start_auth",
+    "bp_verification.verification",
+    "bp_menu.menu"
+  ],
+  "bookkeeper": [
+    "auth.start_auth",
+    "bp_report.menu_report",
+    "bp_report.create_report_1",
+    "bp_report.create_report_2",
+    "bp_report.view_report_1",
+    "bp_report.view_report_2"
+  ],
+  "external": [
+    "auth.start_auth",
+    "bp_order.index_order_2"
+  ]
+}

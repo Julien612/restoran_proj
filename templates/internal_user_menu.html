@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block internal_user %}
+
+<div class="upper_line">
+</div>
+
+<div class="list">
+    <a href="{{ url_for('bp_query.menu_query') }}" class=" btn button_class">Запросы</a>
+    <a href="{{ url_for('bp_report.menu_report') }}" class="btn button_class">Работа с отчетами</a>
+    <a href="{{ url_for('bp_verification.verification') }}" class="btn  button_class">Проверить заказы</a>
+    <a href="{{ url_for('bp_menu.menu') }}" class="btn  button_class">Редактировать меню</a>
+    <a href="/exit" class="btn  button_class"> Нажмите для выхода из системы</a>
+</div>
+
+
+
+
+{% endblock %}

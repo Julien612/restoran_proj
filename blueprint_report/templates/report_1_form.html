@@ -1,0 +1,29 @@
+{% extends 'base_report.html' %}
+{% block report %}
+
+<div class="b_class">
+    <h2 align="center">Введите год и месяц</h2>
+</div>
+<h2 align="center">{{ error_message }}</h2>
+    <div class="p-4 m-0 border-0 bd-example" style="width: 40%;">
+        <form method="post" action="">
+                <div class="form-floating mb-3">
+                    <input name="input_year" class="form-control auth_input" id="year" type="text" placeholder="input_year">
+                    <label for="year">Year</label>
+                </div>
+                <div class="form-floating">
+                    <input name="input_month" class="form-control auth_input" id="month" type="text" placeholder="input_month">
+                    <label for="month">Month</label>
+                </div>
+                <div align="center" style="margin-top:13%">
+                    <input type="submit" class="btn btn-dark btn-lg" value="Отправить">
+                </div>
+            </form>
+        <br><br>
+
+        <a text_aling ="center" href="{{ url_for('bp_report.menu_report') }}"> Нажмите для возврата в меню </a><br><br>
+
+
+    </div>
+
+{% endblock %}

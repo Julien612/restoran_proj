@@ -1,0 +1,17 @@
+{% macro render_item(item, show_form=False, show_amount=False) %}
+    <div style="padding-bottom: 5%; font-size: 20px" class="border_bottom" >
+        <p>
+        <span style="color: green;"> {{ item['dish_name'] }} </span>
+            <span style="color: green;"> {{ item['dish_amount'] }} шт.</span>
+
+        </p>
+        {% if show_form %}
+            <div>
+                <form action="" method="post">
+                    <input type="hidden" name="dish_id" value="{{ item['dish_id'] }}" >
+                    <input type="submit" name="action" value="Add" class="btn btn-secondary">
+                </form>
+            </div>
+        {% endif %}
+    </div>
+{% endmacro %}

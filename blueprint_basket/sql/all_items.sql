@@ -1,0 +1,1 @@
+select dish_id, dish_name, dish_price, dish_src from restoran.menu where dish_status='type1'

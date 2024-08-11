@@ -1,0 +1,1 @@
+select  sum(order_bill) from restoran.user_order where  year(order_date)='$input_year'

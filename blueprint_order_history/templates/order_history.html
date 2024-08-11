@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order History</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        body{
+            background: #ebe3d4;
+        }
+        a {
+            text-decoration: none;
+            color: #463E3F;
+        }
+        .a_class{
+            padding-top:2%
+            width: 100px;
+            padding-bottom: 2%;
+            font-weight:700;
+            font-size:20px;
+            background:;
+        }
+        .mybutton{
+            border-radius:20px;
+        }
+        .border_top{
+            border-top:solid;
+            border-color:#463E3F;
+            border-width:3px;
+
+        }
+        .a_class{
+            margin-left:10%;
+        }
+        .button_class{
+            width: 80%;
+            border-radius:30px;
+            border-color: #6992ac;
+            border-width: 2px;
+            color:#443d34; /**/
+            font-size:18px;
+            outline: solid;
+            outline-color:#b8d3e4;
+            outline-width: 4px;
+            margin-top: 60px;
+            font-family: ;
+            font-weight:700;
+            height:51px;
+            padding-top: 10px;
+        }
+        .border_top{
+            border-top:solid;
+            border-color:#463E3F;
+            border-width:1px;
+
+        }
+    </style>
+</head>
+<body>
+    <a href="{{url_for('menu_choice')}}" class="a_class btn button_class">Вернуться в главное меню</a>
+    <div align="center" class="p-4">
+    <h3>История заказов</h3>
+    </div>
+    <div align="center">
+    {% if list %}
+        {% for i in range(m) %}
+            {% if list[i] %}
+                <div class="p-4 border_top" >
+                    <span>Заказ № {{ list[i] }} / </span><span style="color:gray"> {{ result[i]['order_date'] }}</span>
+                </div>
+            {% endif %}
+                <div>
+                    <span > {{ result[i]['dish_name'] }} </span>
+                <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        </svg>
+                </span>
+                <span > {{ result[i]['dish_amount'] }} </span>
+                <span > шт. </span>
+                </div>
+
+        {% endfor %}
+    {% endif %}
+    </div>
+</body>
+</html>

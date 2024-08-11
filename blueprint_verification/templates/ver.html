@@ -1,0 +1,45 @@
+{% extends 'base_ver.html' %}
+{% block ver %}
+
+<div style="margin:30px">
+
+
+    {% import 'utils.html' as utils %}
+
+    <div class="container">
+        <div class="row">
+        <div class="col-md-8">
+            <div class="a_class" align="center"> <h3>Заказ </h3> </div>
+            {% if items %}
+                {% for item in items %}
+                    {{ utils.render_item(item, show_form = True, show_amount = False) }}
+                {% endfor %}
+            {% else %}
+                {% if list %}
+                {% else %}
+                    <div align="center" class="a_class">
+                        <p> Нет заказов для проверки</p>
+
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <div class="a_class" align="center">
+                <h3>Лист</h3>
+            </div>
+
+            {% if list %}
+            {% for key in list %}
+                {{ utils.render_item(list[key], show_form = False, show_amount = True) }}
+            {% endfor %}
+            <a  href="{{url_for('bp_verification.clear_basket')}}">Очистить</a><br><br>
+            {% endif %}
+            <a href="{{url_for('bp_verification.check_order')}}">Перейти к следующему заказу</a> <br><br>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

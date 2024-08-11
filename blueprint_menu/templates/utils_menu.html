@@ -1,0 +1,24 @@
+{% macro render_item(item,key, show_form=False) %}
+    <div style="padding-bottom: 5%; font-size: 20px" class="border_bottom" >
+        <p>
+
+        <span style="color: green;"> {{ item['dish_name'] }} </span>
+
+        </p>
+        {% if show_form %}
+            <div>
+                <form action="" method="post">
+                    <input type="hidden" name="dish_id_1" value="{{ item['dish_id'] }}">
+                    <input type="submit" name="action" value="Убрать из меню" class="btn btn-secondary">
+                </form>
+            </div>
+        {% else %}
+            <div>
+                <form action="" method="post">
+                    <input type="hidden" name="dish_id_2" value="{{ key }}">
+                    <input type="submit" name="action" value="Вернуть в меню" class="btn btn-secondary">
+                </form>
+            </div>
+        {% endif %}
+    </div>
+{% endmacro %}
